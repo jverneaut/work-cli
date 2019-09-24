@@ -13,7 +13,7 @@ const option = args[1];
       if (sitesPath) {
         const site = await input.select(
           'path',
-          'Sur quel site souhaitez-vous travailler ?',
+          'Sur quel site souhaite-tu travailler ?',
           shell.getFolderNames(sitesPath)
         );
 
@@ -23,13 +23,13 @@ const option = args[1];
           data.types.SITES_PATH,
           await input.text(
             data.types.SITES_PATH,
-            'Quel est le chemin vers votre dossier Sites ?'
+            'Quel est le chemin vers ton dossier Sites ?'
           )
         );
         sitesPath = data.get(data.types.SITES_PATH);
         const site = await input.select(
           'path',
-          'Sur quel site souhaitez-vous travailler ?',
+          'Sur quel site souhaite-tu travailler ?',
           shell.getFolderNames(sitesPath)
         );
 
@@ -41,7 +41,7 @@ const option = args[1];
       if (projectsPath) {
         const project = await input.select(
           'path',
-          'Sur quel projet souhaitez-vous travailler ?',
+          'Sur quel projet souhaite-tu travailler ?',
           shell.getFolderNames(projectsPath)
         );
 
@@ -51,14 +51,14 @@ const option = args[1];
           data.types.PROJECTS_PATH,
           await input.text(
             data.types.PROJECTS_PATH,
-            'Quel est le chemin vers votre dossier Projects ?'
+            'Quel est le chemin vers ton dossier Projects ?'
           )
         );
         projectsPath = data.get(data.types.PROJECTS_PATH);
 
         const project = await input.select(
           'path',
-          'Sur quel projet souhaitez-vous travailler ?',
+          'Sur quel projet souhaite-tu travailler ?',
           shell.getFolderNames(projectsPath)
         );
 
