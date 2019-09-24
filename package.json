@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "prompts": "^2.2.1",
+    "shelljs": "^0.8.3"
+  }
 }
