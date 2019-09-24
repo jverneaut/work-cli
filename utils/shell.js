@@ -1,7 +1,13 @@
 const shell = require('shelljs');
 
-export const getFileNames = path =>
+const getFolderNames = path =>
   shell
-    .exec('ls -t ' + path, { silent: true })
+    .exec('ls -tp ' + path + ' | grep /', { silent: true })
     .stdout.split('\n')
+    .map(folderName => folderName.slice(0, -1))
     .slice(0, -1);
+
+module.exports = {
+  getFolderNames,
+};
+// console.log(getFolderNames('/Users/julienverneaut/Documents'));

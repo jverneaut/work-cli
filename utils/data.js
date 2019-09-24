@@ -4,6 +4,9 @@ const basePath = args[0];
 
 const types = {
   SITES_PATH: 'sites_path',
+  PROJECTS_PATH: 'projects_path',
+  SELECTED_SITE: 'selected_site',
+  SELECTED_PROJECT: 'selected_project',
 };
 
 const getDataObject = () =>
