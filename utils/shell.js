@@ -10,4 +10,3 @@ const getFolderNames = path =>
 module.exports = {
   getFolderNames,
 };
-// console.log(getFolderNames('/Users/julienverneaut/Documents'));
