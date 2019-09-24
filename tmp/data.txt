@@ -1,4 +1,0 @@
-sites_path:/Users/julienverneaut/Documents/Sites
-projects_path:/Users/julienverneaut/Documents/Projects
-selected_project:wordpress-starter
-selected_site:abert-investments.com
