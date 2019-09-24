@@ -5,19 +5,19 @@ const select = async (name, message, choices) => {
     type: 'select',
     name,
     choices,
-    message
+    message,
   }).then(res => choices[res[name]]);
-}
+};
 
 const text = async (name, message) => {
   return await prompts({
     type: 'text',
     name,
-    message
+    message,
   }).then(res => res[name]);
-}
+};
 
 module.exports = {
   select,
-  text
-}
+  text,
+};
