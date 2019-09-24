@@ -1,11 +1,39 @@
 const fs = require('fs');
-const args = process.argv.splice(process.execArgv.length + 2);
+const args = process.argv.slice(2);
 const basePath = args[0];
 
-const get = (key) => {
-  // fs.readFile(basePath + '/tmp/site.txt', 'utf8', (err, data) => {
-  //   if (err) throw err;
-  //   console.log(data);
-  // });
+const types = {
+  SITES_PATH: 'sites_path',
 }
-const set = (key, value) => {}
+
+const getDataObject = () => Object.assign({}, ...fs
+  .readFileSync(basePath + '/tmp/data.txt', 'utf8')
+  .split('\n')
+  .filter(line => line !== '')
+  .map(line => {
+    const parts = line.split(':');
+    return {
+      [parts[0]]: parts[1]
+    }
+  })
+);
+
+const saveDataObject = (dataObject) => {
+  fs.writeFileSync(basePath + '/tmp/data.txt', Object.keys(dataObject).map(key => key + ':' + dataObject[key] + '\n').join(''));
+}
+
+const get = (key) => {
+  const dataObject = getDataObject();
+  return dataObject[key];
+}
+
+const set = (key, value) => {
+  const dataObject = getDataObject();
+  dataObject[key] = value;
+  saveDataObject(dataObject);
+}
+module.exports = {
+  types,
+  get,
+  set
+}
